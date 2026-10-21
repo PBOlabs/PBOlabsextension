@@ -14,7 +14,7 @@
 # Run worker:
 #   docker run --rm -e REDIS_URL=redis://host:6379 imasd/pdf-qr-api:latest node dist/worker.js
 
-FROM node:20-bookworm-slim AS builder
+FROM node:22.23.4-bookworm-slim AS builder
 
 ENV CI=true \
 	PNPM_HOME="/pnpm" \
@@ -32,7 +32,7 @@ RUN pnpm install --frozen-lockfile --filter @imasd/pdf-qr-api
 RUN pnpm --filter @imasd/pdf-qr-api run build
 
 # --- production dependencies only (install as non-root; no slow chown) ---
-FROM node:20-bookworm-slim AS runner
+FROM node:22.23.4-bookworm-slim AS runner
 
 ENV NODE_ENV=production \
 	PNPM_HOME="/pnpm" \

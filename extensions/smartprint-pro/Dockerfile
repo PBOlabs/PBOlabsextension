@@ -1,4 +1,4 @@
-FROM node:22-alpine AS deps
+FROM node:22.23.4-alpine AS deps
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
@@ -39,7 +39,7 @@ ENV VITE_TRIMBLE_CONNECT_REGION=${VITE_TRIMBLE_CONNECT_REGION}
 
 RUN pnpm --filter @imasd/ext-smartprint-pro build
 
-FROM node:22-alpine
+FROM node:22.23.4-alpine
 
 ARG EXTENSION_URL=https://extensions.imasdconsult.com/trimble/smartprintPRO
 ENV EXTENSION_URL=${EXTENSION_URL}
