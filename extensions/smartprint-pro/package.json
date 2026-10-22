@@ -14,7 +14,7 @@
 		"@imasd/shared": "workspace:*",
 		"qrcode": "^1.5.4",
 		"trimble-connect-sdk": "^4.0.12",
-		"xlsx": "^0.18.5"
+		"xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
 	},
 	"devDependencies": {
 		"@imasd/tailwind-config": "workspace:*",
